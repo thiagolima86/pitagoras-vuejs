@@ -12,39 +12,51 @@ new Vue({
 			return hipotenusa
 		},
 		triangle(){
-			cat1 = this.cateto1
-			cat2 = this.cateto2
-
-			if(cat1 >= cat2) {
-				prop = cat1/cat2
-				max =200/prop
-				cat1 = prop*max
-				cat2 = max
-			}else{
-				prop = cat2/cat1
-				cat2 = prop*100
-				cat1 = 100
-			}
+			caty = this.proporcion("caty")
+			catx = this.proporcion("catx")			
 
 			var c = document.getElementById("triangle")
 			this.canvas = c.getContext('2d')
 			
 			this.canvas.beginPath();
 			this.canvas.moveTo(0, 0)
-			this.canvas.lineTo(0, cat1)
+			this.canvas.lineTo(0, caty)
 			this.canvas.stroke()
 			
 			this.canvas.clearRect(0, 0, 900, 900);
 			
 			this.canvas.moveTo(0, 0)
-			this.canvas.lineTo(cat2, cat1)
+			this.canvas.lineTo(catx, caty)
 			this.canvas.stroke()
 			
-			this.canvas.moveTo(0, cat1)
-			this.canvas.lineTo(cat2, cat1)
+			this.canvas.moveTo(0, caty)
+			this.canvas.lineTo(catx, caty)
 			this.canvas.stroke()
 			
 			
+		},
+		proporcion(cat){
+			caty = this.cateto1
+			catx = this.cateto2
+
+			if(caty >= catx) {
+				prop = caty/catx
+				max = 200/prop
+				caty = prop*max
+				catx = max
+			}else{
+				prop = catx/caty
+				max = 200/prop
+				catx = prop*max
+				caty = max
+			}
+
+			if(cat == "caty") {
+				return caty
+			}
+
+			return catx
+
 		}
 	},
 	mounted() {		
