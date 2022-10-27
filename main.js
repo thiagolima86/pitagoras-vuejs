@@ -36,20 +36,9 @@ new Vue({
 			
 		},
 		proporcion(cat){
-			caty = this.cateto1
-			catx = this.cateto2
-
-			if(caty >= catx) {
-				prop = caty/catx
-				max = 200/prop
-				caty = prop*max
-				catx = max
-			}else{
-				prop = catx/caty
-				max = 200/prop
-				catx = prop*max
-				caty = max
-			}
+			cat = this.calc_proporcion([this.cateto1, this.cateto2])
+			caty = cat[0]
+			catx = cat[1]		
 
 			if(cat == "caty") {
 				return caty
@@ -57,6 +46,23 @@ new Vue({
 
 			return catx
 
+		},
+		calc_proporcion(cat){
+			caty = cat[0]
+			catx = cat[1]
+
+			if(caty >= catx) {
+				prop = caty/catx
+				max = 200/prop
+				caty = prop*max
+				catx = max
+				return [caty, catx]
+			}
+			prop = catx/caty
+			max = 200/prop
+			catx = prop*max
+			caty = max
+			return [caty, catx]
 		}
 	},
 	mounted() {		
