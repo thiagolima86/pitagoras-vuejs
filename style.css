@@ -16,7 +16,7 @@ header .pitagoras{
     background-image: url(images/pitagoras.jpg);
     background-size: 100% auto;
     width: 100%;
-    max-width: 1000px;
+    max-width: 1500px;
     height: 300px;
     box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
     display: flex;
@@ -34,12 +34,15 @@ header .pitagoras h1{
 main{
     display: flex;
     justify-content: center;
+    background-color: #EEE;
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 4ex;
 }
 main #app{
     width: 100%;
     max-width: 1000px;
-    background-color: #EEE;
-    padding: 4ex;
 }
 
 main .inputs, main .outputs{
@@ -64,4 +67,16 @@ main .hipotenusa{
 main output{
     with:100%;
     background-color: #CCC;
+}
+main canvas{
+    margin-top: 4ex;
+    border: #000 solid 1px;
+}
+main .sobre{
+    padding:2ex;
+    font-size: 1.2em;
+}
+
+main .sobre p{
+    margin-bottom: 1.5ex;
 }
