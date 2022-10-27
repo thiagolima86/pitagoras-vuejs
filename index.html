@@ -4,23 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     
     <title>Pitagoras</title>
 </head>
 <body>
-    <div id="app">
-        <input type="text" value="1" name="cateto1" v-model="cateto1">
-        <input type="text" value="1" name="cateto2" v-model="cateto2">
+    <header><div class="pitagoras"><h1>Pitágoras</h1></div></header>
+    <main>
+        <div id="app">
+            <div class="inputs">
+                <div class="cateto">
+                    <span>Cateto y</span>
+                    <input type="text" value="1" name="cateto1" v-model="cateto1">
+                </div>
+                <div class="cateto">
+                    <span>Cateto x</span>
+                    <input type="text" value="1" name="cateto2" v-model="cateto2">                    
+                </div>
 
-        <br>
-
-        {{ hipotenusa() }}
-
-        <br>
-
-        <canvas id="triangle" width="250" height="250" />
-    </div>
+            </div>
+            <div class="outputs">
+                <div class="hipotenusa">
+                    <div>Hipotenúsa</div>
+                    <output>{{ hipotenusa() }}</output>                  
+                </div>
+            </div>
+    
+            <br>
+    
+            
+    
+            <br>
+    
+            <canvas id="triangle" width="900" height="900" />
+        </div>
+    </main>
 
 
     <script src="main.js"></script>

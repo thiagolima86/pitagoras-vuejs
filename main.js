@@ -34,7 +34,7 @@ new Vue({
 			this.canvas.lineTo(0, cat1)
 			this.canvas.stroke()
 			
-			this.canvas.clearRect(0, 0, 250, 250);
+			this.canvas.clearRect(0, 0, 900, 900);
 			
 			this.canvas.moveTo(0, 0)
 			this.canvas.lineTo(cat2, cat1)
